@@ -191,9 +191,9 @@ $ cd Betty; ./install.sh
 
 ## :blue_book: Authors
 
-* **Brennan D Baraban** - [@bdbaraban](https://github.com/bdbaraban)
+* **Ifeanyi kalu** - [@fazzy12](https://github.com/fazzy12)
 
-* **Bennett Dixon** - [@BennettDixon](https://github.com/BennettDixon)
+* **Felix Adeh Essienne** - [@BennettD](https://github.com/essien1990)
 
 
 ## :mag: License
