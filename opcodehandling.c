@@ -1,15 +1,28 @@
 #include "monty.h"
 
+
 /**
  * execute_opcode - Executes the opcode
  * @stack: Pointer to the stack
  * @line: The line of input
  * @line_number: The line number
+ *
+ * Description:
+ * - Tokenizes the input line to extract opcode and argument.
+ * - If the line starts with '#',
+ *              treats it as a comment and skips further processing.
+ * - Executes the corresponding opcode function based on the tokenized opcode.
+ * - If opcode is unknown, prints an error message
+ *               "L<line_number>: unknown instruction <opcode>"
+ *   and exits with EXIT_FAILURE.
  */
 void execute_opcode(stack_t **stack, char *line, unsigned int line_number)
 {
     char *opcode;
     char *arg;
+
+    if (line[0] == '#')
+        return;
 
     opcode = strtok(line, " \n");
     arg = strtok(NULL, " \n");
@@ -49,10 +62,6 @@ void execute_opcode(stack_t **stack, char *line, unsigned int line_number)
     {
         add(stack, line_number);
     }
-    else if (strcmp(opcode, "nop") == 0)
-    {
-        nop(stack, line_number);
-    }
     else if (strcmp(opcode, "sub") == 0)
     {
         sub(stack, line_number);
@@ -68,6 +77,10 @@ void execute_opcode(stack_t **stack, char *line, unsigned int line_number)
     else if (strcmp(opcode, "mod") == 0)
     {
         mod(stack, line_number);
+    }
+    else if (strcmp(opcode, "nop") == 0)
+    {
+        nop(stack, line_number);
     }
     else
     {
