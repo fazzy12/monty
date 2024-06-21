@@ -44,3 +44,45 @@ void pall(stack_t **stack, unsigned int line_number)
         current = current->next;
     }
 }
+
+/**
+ * pint - prints the value at the top of the stack
+ * @stack: pointer to the stack
+ * @line_number: line number of the current operation
+ */
+void pint(stack_t **stack, unsigned int line_number)
+{
+    if (*stack == NULL)
+    {
+        fprintf(stderr, "L%u: can't pint, stack empty\n", line_number);
+        exit(EXIT_FAILURE);
+    }
+
+    printf("%d\n", (*stack)->n);
+}
+
+/**
+ * pop - removes the top element of the stack
+ * @stack: pointer to the stack
+ * @line_number: line number of the current operation
+ */
+void pop(stack_t **stack, unsigned int line_number)
+{
+    stack_t *temp;
+
+    if (*stack == NULL)
+    {
+        fprintf(stderr, "L%u: can't pop an empty stack\n", line_number);
+        exit(EXIT_FAILURE);
+    }
+
+    temp = *stack;
+    *stack = (*stack)->next;
+
+    if (*stack != NULL)
+        (*stack)->prev = NULL;
+
+    free(temp);
+}
+
+

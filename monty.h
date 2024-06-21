@@ -43,6 +43,7 @@ void execute_opcode(stack_t **stack, char *line, unsigned int line_number);
 void push(stack_t **stack, unsigned int line_number, char *arg);
 void pall(stack_t **stack, unsigned int line_number);
 void pint(stack_t **stack, unsigned int line_number);
+void pop(stack_t **stack, unsigned int line_number);
 char *_allocate_buffer(char **lineptr, size_t *n);
 char *_reallocate_buffer(char *buf, size_t *n);
 ssize_t _getline(char **lineptr, size_t *n, FILE *stream);
