@@ -7,6 +7,10 @@
 #include <ctype.h>
 #include <unistd.h>
 
+/* Define stack and queue modes */
+#define STACK_MODE 0
+#define QUEUE_MODE 1
+
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -54,9 +58,13 @@ void mod(stack_t **stack, unsigned int line_number);
 void pchar(stack_t **stack, unsigned int line_number);
 void rotl(stack_t **stack, unsigned int line_number);
 void rotr(stack_t **stack, unsigned int line_number);
+void stack_mode(stack_t **stack, unsigned int line_number);
+void queue_mode(stack_t **stack, unsigned int line_number);
 char *_allocate_buffer(char **lineptr, size_t *n);
 char *_reallocate_buffer(char *buf, size_t *n);
 ssize_t _getline(char **lineptr, size_t *n, FILE *stream);
 void free_stack(stack_t *stack);
+
+extern int current_mode;
 
 #endif /* MONTY_H */

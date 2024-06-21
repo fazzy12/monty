@@ -1,5 +1,6 @@
 #include "monty.h"
 
+int current_mode = STACK_MODE;
 
 /**
  * execute_opcode - Executes the opcode
@@ -97,6 +98,14 @@ void execute_opcode(stack_t **stack, char *line, unsigned int line_number)
     else if (strcmp(opcode, "rotr") == 0)
     {
         rotr(stack, line_number);
+    }
+    else if (strcmp(opcode, "stack") == 0)
+    {
+        stack_mode(stack, line_number);
+    }
+    else if (strcmp(opcode, "queue") == 0)
+    {
+        queue_mode(stack, line_number);
     }
     else
     {

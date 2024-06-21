@@ -80,3 +80,33 @@ ssize_t _getline(char **lineptr, size_t *n, FILE *stream)
     buf[len] = '\0';
     return (len);
 }
+
+/**
+ * stack_mode - Sets the mode of the data to stack (LIFO)
+ * @stack: Pointer to the stack
+ * @line_number: Line number being executed
+ *
+ * Description:
+ * - Sets the mode of the data to stack (LIFO).
+ */
+void stack_mode(stack_t **stack, unsigned int line_number)
+{
+    (void)stack;
+    (void)line_number;
+    current_mode = STACK_MODE;
+}
+
+/**
+ * queue_mode - Sets the mode of the data to queue (FIFO)
+ * @stack: Pointer to the stack
+ * @line_number: Line number being executed
+ *
+ * Description:
+ * - Sets the mode of the data to queue (FIFO).
+ */
+void queue_mode(stack_t **stack, unsigned int line_number)
+{
+    (void)stack;
+    (void)line_number;
+    current_mode = QUEUE_MODE;
+}
