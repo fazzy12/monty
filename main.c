@@ -7,8 +7,6 @@
  *
  * Return: EXIT_SUCCESS on success, or EXIT_FAILURE on failure
  */
-ssize_t _getline(char **lineptr, size_t *n, FILE *stream);
-
 int main(int argc, char *argv[])
 {
     FILE *file;
@@ -39,6 +37,6 @@ int main(int argc, char *argv[])
 
     free(line);
     fclose(file);
-    free(stack);
+    free_stack(stack);
     return (EXIT_SUCCESS);
 }
