@@ -67,4 +67,5 @@ void free_stack(stack_t *stack);
 
 extern int current_mode;
 
+
 #endif /* MONTY_H */
